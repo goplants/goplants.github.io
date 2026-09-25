@@ -3,31 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>고플랜츠 - 이용약관</title>
+<title>고플랜츠 이용약관</title>
+<link rel="alternate" hreflang="ko" href="https://goplants.github.io/terms/">
+<link rel="alternate" hreflang="en" href="https://goplants.github.io/terms/en/">
+<link rel="alternate" hreflang="ja" href="https://goplants.github.io/terms/ja/">
+<link rel="alternate" hreflang="zh-CN" href="https://goplants.github.io/terms/zh-hans/">
+<link rel="alternate" hreflang="zh-TW" href="https://goplants.github.io/terms/zh-hant/">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; line-height: 1.8; color: #333; background: #f6f8f3; padding: 20px; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Hiragino Sans', 'PingFang SC', 'PingFang TC', 'Microsoft YaHei', 'Microsoft JhengHei', sans-serif; line-height: 1.8; color: #333; background: #f6f8f3; padding: 20px; }
 .container { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 16px; padding: 40px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.langs { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; margin-bottom: 20px; }
+.langs a { font-size: 13px; padding: 5px 11px; border-radius: 999px; color: #3a5a36; background: #f2f7ee; text-decoration: none; }
+.langs a.on { background: #3a5a36; color: #fff; }
+.notice { font-size: 13px; color: #6a6a5a; background: #faf7ea; border-radius: 10px; padding: 10px 14px; margin-bottom: 20px; }
 h1 { font-size: 24px; color: #2f4a2c; margin-bottom: 8px; }
 .subtitle { font-size: 14px; color: #888; margin-bottom: 32px; }
 h2 { font-size: 18px; color: #3a5a36; margin-top: 32px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #e6f0e0; }
+h3 { font-size: 15px; color: #555; margin-top: 16px; margin-bottom: 8px; }
 p, li { font-size: 14px; color: #555; margin-bottom: 8px; }
 ul, ol { padding-left: 20px; margin-bottom: 12px; }
 li { margin-bottom: 4px; }
 .highlight { background: #eef5e8; padding: 16px; border-radius: 12px; margin: 16px 0; }
 .highlight p { margin: 0; font-size: 13px; }
 table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
-th, td { border: 1px solid #e0e0e0; padding: 10px 12px; text-align: left; vertical-align: top; }
+th, td { border: 1px solid #e0e0e0; padding: 10px 12px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
 th { background: #f2f7ee; font-weight: 600; color: #3a5a36; }
 .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #999; text-align: center; }
 td.k, th.k { white-space: nowrap; }
-@media (max-width: 600px) { body { padding: 12px; } .container { padding: 24px 14px; } th, td { padding: 8px 6px; } }
+:lang(ja) *, :lang(zh-CN) *, :lang(zh-TW) * { word-break: normal; overflow-wrap: anywhere; }
+@media (max-width: 600px) { body { padding: 12px; } .container { padding: 24px 14px; } th, td { padding: 8px 6px; } td.k, th.k { white-space: normal; } }
 </style>
 </head>
 <body>
 <div class="container">
-<h1>고플랜츠 이용약관</h1>
-<p class="subtitle">시행일: 앱 출시일 | 최종 수정: 2026년 9월 24일</p>
+<nav class="langs" translate="no"><a href="../terms/" lang="ko" class="on">한국어</a><a href="../terms/en/" lang="en">English</a><a href="../terms/ja/" lang="ja">日本語</a><a href="../terms/zh-hans/" lang="zh-CN">简体中文</a><a href="../terms/zh-hant/" lang="zh-TW">繁體中文</a></nav>
+
+<h1 data-rev="2026-09-25">고플랜츠 이용약관</h1>
+<p class="subtitle">시행일: 앱 출시일 | 최종 수정: 2026년 9월 25일</p>
 
 <h2>제1조 (목적)</h2>
 <p>이 약관은 고플랜츠 운영자(이하 "운영자")가 제공하는 모바일 앱 「고플랜츠(GoPlants)」(이하 "앱")의 이용 조건과 절차, 이용자와 운영자의 권리·의무를 정합니다.</p>
@@ -62,7 +75,7 @@ td.k, th.k { white-space: nowrap; }
 <p>앱에는 회원가입·로그인이 없습니다. 정원 기록은 이용자의 기기에만 저장되며, 운영자는 그 사본을 갖고 있지 않습니다.</p>
 </div>
 <ol>
-<li>기기를 바꾸거나 앱을 삭제하면 정원 기록이 사라집니다. 기기를 바꾸기 전에 <strong>옛 기기</strong>의 설정에서 「기록 파일로 보관」을 눌러 기록 파일(.json)을 클라우드 드라이브나 메신저의 「나에게 보내기」 등 새 기기에서 열 수 있는 곳에 저장하고, <strong>새 기기</strong>에 앱을 설치한 뒤 설정에서 「기록 파일 불러오기」로 그 파일을 고르면 정원이 그대로 이어집니다. 불러오기는 새 기기의 기록을 파일의 기록으로 덮어씁니다(덮기 전 기록은 앱 안에 한 벌 남겨 둡니다). 운영체제의 기기 백업(Android 자동 백업, iOS iCloud 백업)이 켜져 있으면 함께 복원될 수 있으나, 이는 운영체제의 기능이며 운영자가 보장하지 않습니다.</li>
+<li>기기를 바꾸거나 앱을 삭제하면 정원 기록이 사라집니다. 기기를 바꾸기 전에 <strong>옛 기기</strong>의 설정에서 「기록 파일로 보관」을 눌러 기록 파일(.gpsave — 앱만 열 수 있게 잠근 파일)을 클라우드 드라이브나 메신저의 「나에게 보내기」 등 새 기기에서 열 수 있는 곳에 저장하고, <strong>새 기기</strong>에 앱을 설치한 뒤 설정에서 「기록 파일 불러오기」로 그 파일을 고르면 정원이 그대로 이어집니다. 불러오기는 새 기기의 기록을 파일의 기록으로 덮어씁니다(덮기 전 기록은 앱 안에 한 벌 남겨 둡니다). 운영체제의 기기 백업(Android 자동 백업, iOS iCloud 백업)이 켜져 있으면 함께 복원될 수 있으나, 이는 운영체제의 기능이며 운영자가 보장하지 않습니다.</li>
 <li>운영자는 이용자가 백업하지 않아 잃어버린 정원 기록을 복구해 드릴 수 없습니다.</li>
 <li>향후 계정 기능을 도입하는 경우, 도입 시점에 별도로 안내하고 동의를 받습니다.</li>
 </ol>
