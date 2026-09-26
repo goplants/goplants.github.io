@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>GoPlants · 정원 구경</title>
+<meta name="description" content="GoPlants 친구의 과일 정원을 구경해요.">
+<meta property="og:title" content="GoPlants · 친구의 정원"><meta property="og:description" content="위젯에서 매일 돌보는 작은 과일 정원">
+<meta property="og:image" content="https://goplants.github.io/garden/a/yard.jpg"><meta name="robots" content="noindex">
+<style>
+@font-face{font-family:'GoRound';src:url(a/goround-b.woff2) format('woff2');font-weight:100 950;font-display:swap}
+:root{--ink:#3b2f1e;--sub:#7a6a50;--card:#fffdf6;--line:#e6dcc4;--leaf:#4f7a3a}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:'GoRound',system-ui,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:var(--ink);
+  background:#e9efd9 url(a/yard.jpg) center top/cover fixed;word-break:keep-all;overflow-wrap:anywhere}
+html:lang(ja) body,html:lang(zh-TW) body,html:lang(zh-CN) body{font-family:system-ui,-apple-system,'Hiragino Sans','PingFang TC','PingFang SC','Microsoft JhengHei','Microsoft YaHei',sans-serif}
+main{max-width:560px;margin:0 auto;padding:28px 16px 40px}
+.card{background:rgba(255,253,246,.94);border:1px solid var(--line);border-radius:22px;padding:20px 16px 18px;box-shadow:0 10px 30px rgba(60,45,20,.18)}
+h1{margin:0 0 6px;font-size:24px;line-height:1.3;text-align:center;text-wrap:balance}
+.sub{margin:0 0 16px;text-align:center;color:var(--sub);font-size:14px}
+.bed{display:grid;grid-template-columns:repeat(4,1fr);gap:18px 6px;padding:16px 6px 10px;border-radius:16px;
+  background:linear-gradient(#cfe3a8,#b9d58e);box-shadow:inset 0 2px 6px rgba(60,80,20,.18)}
+.pot{position:relative;height:118px}
+.pot img{position:absolute;left:50%;transform:translateX(-50%);max-width:none;display:block}
+.pot .pk{bottom:16px;height:52px}
+.pot .pf{bottom:16px;height:52px;clip-path:inset(19% 0 0 0);z-index:2}
+.pot .tr{z-index:1}
+.pot span{position:absolute;left:0;right:0;bottom:0;text-align:center;font-size:12px;color:#4a3c24;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.none{grid-column:1/-1;text-align:center;color:var(--sub);padding:24px 0}
+.bad{text-align:center;padding:24px 8px;font-size:16px}
+.cta{margin:14px auto 0;max-width:420px;text-align:center;background:rgba(255,253,246,.9);border-radius:16px;padding:10px 14px;box-shadow:0 4px 14px rgba(60,45,20,.12)}
+.cta b{display:block;font-size:17px;color:var(--leaf)}
+.cta p{margin:4px 0 0;color:var(--sub);font-size:14px}
+footer{margin:10px auto 0;width:max-content;max-width:100%;text-align:center;font-size:12px;background:rgba(255,253,246,.85);border-radius:999px;padding:6px 12px}
+footer a{color:#5b4a2e;margin:0 8px}
+@media (max-width:360px){.bed{grid-template-columns:repeat(3,1fr)}}
+</style></head>
+<body><main><div class="card" id="c"></div>
+<div class="cta"><b id="soon"></b><p id="tag"></p></div>
+<footer id="ft"></footer></main>
+<script>
+var D={"crops":{"mango":{"i":"g_ripe.webp","c":0.03,"n":{"ko":"애플망고","en":"Mango","ja":"マンゴー","zh-TW":"愛文芒果","zh-CN":"苹果芒"}},"strawberry":{"i":"s_ripe.webp","c":0.04,"n":{"ko":"딸기","en":"Strawberry","ja":"いちご","zh-TW":"草莓","zh-CN":"草莓"}},"banana":{"i":"b_ripe.webp","c":0.0275,"n":{"ko":"바나나","en":"Banana","ja":"バナナ","zh-TW":"香蕉","zh-CN":"香蕉"}},"apple":{"i":"a_ripe.webp","c":0.0325,"n":{"ko":"사과","en":"Apple","ja":"りんご","zh-TW":"蘋果","zh-CN":"苹果"}},"tangerine":{"i":"t_ripe.webp","c":0.0225,"n":{"ko":"귤","en":"Mandarin","ja":"みかん","zh-TW":"橘子","zh-CN":"橘子"}},"dragon":{"i":"d_ripe.webp","c":0.0325,"n":{"ko":"용과","en":"Dragon fruit","ja":"ドラゴンフルーツ","zh-TW":"火龍果","zh-CN":"火龙果"}},"grape":{"i":"gp_ripe.webp","c":0.02,"n":{"ko":"포도","en":"Grape","ja":"ぶどう","zh-TW":"葡萄","zh-CN":"葡萄"}},"lemon":{"i":"lm_ripe.webp","c":0.0225,"n":{"ko":"레몬","en":"Lemon","ja":"レモン","zh-TW":"檸檬","zh-CN":"柠檬"}},"watermelon":{"i":"wm_ripe.webp","c":0.22,"n":{"ko":"수박","en":"Watermelon","ja":"すいか","zh-TW":"西瓜","zh-CN":"西瓜"}},"pineapple":{"i":"pn_ripe.webp","c":0.0275,"n":{"ko":"파인애플","en":"Pineapple","ja":"パイナップル","zh-TW":"鳳梨","zh-CN":"菠萝"}},"shine":{"i":"sh_ripe.webp","c":0.0225,"n":{"ko":"샤인머스캣","en":"Shine Muscat","ja":"シャインマスカット","zh-TW":"麝香葡萄","zh-CN":"阳光玫瑰葡萄"}},"chamoe":{"i":"cm_ripe.webp","c":0.18,"n":{"ko":"참외","en":"Korean melon","ja":"チャメ","zh-TW":"韓國香瓜","zh-CN":"韩国香瓜"}},"pear":{"i":"pr_ripe.webp","c":0.03,"n":{"ko":"배","en":"Pear","ja":"梨","zh-TW":"梨子","zh-CN":"梨子"}},"kiwi":{"i":"kw_ripe.webp","c":0.04,"n":{"ko":"키위","en":"Kiwi","ja":"キウイ","zh-TW":"奇異果","zh-CN":"猕猴桃"}},"blueberry":{"i":"bb_ripe.webp","c":0.0325,"n":{"ko":"블루베리","en":"Blueberry","ja":"ブルーベリー","zh-TW":"藍莓","zh-CN":"蓝莓"}},"peach":{"i":"pc_ripe.webp","c":0.0275,"n":{"ko":"복숭아","en":"Peach","ja":"桃","zh-TW":"水蜜桃","zh-CN":"水蜜桃"}},"persimmon":{"i":"ps_ripe.webp","c":0.035,"n":{"ko":"단감","en":"Persimmon","ja":"柿","zh-TW":"柿子","zh-CN":"柿子"}},"tomato":{"i":"tm_ripe.webp","c":0.02,"n":{"ko":"방울토마토","en":"Tomato","ja":"トマト","zh-TW":"番茄","zh-CN":"番茄"}},"cucumber":{"i":"cu_ripe.webp","c":0.02,"n":{"ko":"오이","en":"Cucumber","ja":"きゅうり","zh-TW":"小黃瓜","zh-CN":"黄瓜"}},"chili":{"i":"ch_ripe.webp","c":0.025,"n":{"ko":"고추","en":"Chili pepper","ja":"とうがらし","zh-TW":"辣椒","zh-CN":"辣椒"}},"veggie":{"i":"v_ripe.webp","c":0.0225,"n":{"ko":"파프리카","en":"Bell pepper","ja":"パプリカ","zh-TW":"甜椒","zh-CN":"甜椒"}}},"pots":{"pot_1":"pot_1.webp","pot_2":"pot_2.webp","pot_3":"pot_3.webp","pot_4":"pot_4.webp","pot_5":"pot_5.webp","pot_6":"pot_6.webp","pot_7":"pot_7.webp","pot_8":"pot_8.webp","pot_9":"pot_9.webp","pot_10":"pot_10.webp","pot_11":"pot_11.webp","pot_12":"pot_12.webp","pot_13":"pot_13.webp","pot_14":"pot_14.webp","pot_15":"pot_15.webp","pot_16":"pot_16.webp"},"txt":{"ko":{"visit":"{n} 님의 정원","sub":"{f} · 수확 {h}그루 · {s}"},"en":{"visit":"{n}’s garden","sub":"{f} · {h} harvested · {s}"},"ja":{"visit":"{n} さんの畑","sub":"{f} · 収穫 {h} 本 · {s}"},"zh-TW":{"visit":"{n} 的花園","sub":"{f} · 收成{h}株 · {s}"},"zh-CN":{"visit":"{n} 的花园","sub":"{f} · 收获{h}株 · {s}"}},"soil":{"ko":["메마른 흙","자리 잡은 흙","기름진 흙","살아있는 흙","명품 토양"],"en":["Bare soil","Settling soil","Rich soil","Living soil","Master soil"],"ja":["やせた土","落ち着いた土","肥えた土","生きている土","名品の土"],"zh-TW":["貧瘠的土","安定的土","肥沃土","活土","精品土壤"],"zh-CN":["贫瘠的土","安定的土","肥沃土","活土","精品土壤"]},"ui":{"ko":{"bad":"정원 링크가 올바르지 않아요. 보내 준 사람에게 다시 받아 주세요.","tag":"위젯에서 매일 돌보는 작은 과일 정원","soon":"고플랜츠 · 곧 출시","empty":"아직 화분이 없어요","terms":"이용약관","privacy":"개인정보 처리방침"},"en":{"bad":"This garden link doesn’t look right. Please ask for it again.","tag":"A little fruit garden you tend from your home-screen widget","soon":"GoPlants · coming soon","empty":"No pots yet","terms":"Terms","privacy":"Privacy"},"ja":{"bad":"庭のリンクが正しくないようです。送ってくれた人にもう一度もらってください。","tag":"ホーム画面のウィジェットで毎日育てる、小さな果物の庭","soon":"GoPlants · まもなく公開","empty":"まだ鉢がありません","terms":"利用規約","privacy":"プライバシーポリシー"},"zh-TW":{"bad":"這個花園連結好像不正確，請再向對方要一次。","tag":"在桌面小工具上每天照顧的小小果樹花園","soon":"GoPlants · 即將推出","empty":"還沒有盆栽","terms":"使用條款","privacy":"隱私權政策"},"zh-CN":{"bad":"这个花园链接好像不正确，请再向对方要一次。","tag":"在桌面小组件上每天照顾的小小果树花园","soon":"GoPlants · 即将推出","empty":"还没有盆栽","terms":"使用条款","privacy":"隐私政策"}},"legal":{"ko":"","en":"en/","ja":"ja/","zh-TW":"zh-hant/","zh-CN":"zh-hans/"}};
+function lang(){var l=(navigator.language||'ko').toLowerCase();if(l.indexOf('ko')===0)return 'ko';if(l.indexOf('ja')===0)return 'ja';
+  if(l.indexOf('zh')===0)return /tw|hk|mo|hant/.test(l)?'zh-TW':'zh-CN';return 'en'}
+var L=lang();document.documentElement.lang=L;var U=D.ui[L];
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function unb64u(s){s=s.replace(/-/g,'+').replace(/_/g,'/');return decodeURIComponent(escape(atob(s)))}
+function read(){var m=/[?&]g=([^&#]+)/.exec(location.search||'');if(!m||m[1].length>16000)return null;
+  try{var o=JSON.parse(unb64u(m[1]));if(!o||o.v!==1||!Array.isArray(o.p)||o.p.length>32)return null;
+    var p=o.p.filter(function(x){return Array.isArray(x)&&D.crops.hasOwnProperty(x[0])&&typeof x[1]==='string'&&D.pots.hasOwnProperty(x[1])});
+    return {n:String(o.n||'?').slice(0,16),f:String(o.f||'').slice(0,20),h:Math.max(0,o.h|0),s:Math.max(0,Math.min(100,Number(o.s)||0)),p:p}}catch(e){return null}}
+function pot(x){var c=D.crops[x[0]],ph=52,soil=16+ph*.79,th=Math.round(ph*1.55),cut=c.c||0,clip='inset(0 0 '+(cut*100).toFixed(1)+'% 0)';
+  return '<div class="pot"><img class="pk" src="a/'+D.pots[x[1]]+'" alt=""><img class="tr" src="a/'+c.i+'" alt="" style="height:'+th+'px;bottom:'+(soil-th*cut).toFixed(1)+'px;clip-path:'+clip+';-webkit-clip-path:'+clip+'">'
+    +'<img class="pf" src="a/'+D.pots[x[1]]+'" alt=""><span>'+esc(c.n[L]||c.n.en)+'</span></div>'}
+var g=read(),el=document.getElementById('c');
+if(!g)el.innerHTML='<p class="bad">'+esc(U.bad)+'</p>';
+else{var t=D.txt[L]||D.txt.en,soil=D.soil[L][Math.min(4,Math.floor(g.s/20))];
+  document.title='GoPlants · '+t.visit.replace('{n}',g.n);
+  el.innerHTML='<h1>'+esc(t.visit.replace('{n}',g.n))+'</h1><p class="sub">'+esc(t.sub.replace('{f}',g.f).replace('{h}',g.h).replace('{s}',soil)).replace(/^ · /,'')+'</p>'
+    +'<div class="bed">'+(g.p.length?g.p.map(pot).join(''):'<p class="none">'+esc(U.empty)+'</p>')+'</div>'}
+document.getElementById('soon').textContent=U.soon;document.getElementById('tag').textContent=U.tag;
+document.getElementById('ft').innerHTML='<a href="../terms/'+D.legal[L]+'">'+esc(U.terms)+'</a><a href="../privacy/'+D.legal[L]+'">'+esc(U.privacy)+'</a>';
+</script></body></html>
