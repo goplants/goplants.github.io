@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>고플랜츠 GoPlants — 홈 화면에서 과일·채소를 키워요</title>
+<meta name="description" content="바쁜 어른을 위한 힐링 위젯. 매일 물 주고 돌보면 15~30일 뒤 주렁주렁. Grow a fruit tree on your home screen.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://goplants.github.io/get/">
+<meta property="og:title" content="고플랜츠 — 홈 화면에서 과일·채소를 키워요"><meta property="og:description" content="바쁜 어른을 위한 힐링 위젯 · 매일 돌보면 15~30일 뒤 주렁주렁 · Grow a fruit tree on your home screen">
+<meta property="og:image" content="https://goplants.github.io/get/a/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><link rel="icon" href="a/icon.png">
+<style>
+@font-face{font-family:'GoRound';src:url(a/goround-b.woff2) format('woff2');font-weight:100 950;font-display:swap}
+:root{--ink:#3b2f1e;--sub:#7a6a50;--leaf:#4f7a3a;--card:#fffdf6}
+*{box-sizing:border-box}
+body{margin:0;font-family:'GoRound',system-ui,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:var(--ink);background:#faf3e0;word-break:keep-all;overflow-wrap:anywhere}
+html:lang(ja) body,html:lang(zh-TW) body,html:lang(zh-CN) body{font-family:system-ui,-apple-system,'Hiragino Sans','PingFang TC','PingFang SC','Microsoft JhengHei','Microsoft YaHei',sans-serif}
+main{max-width:520px;margin:0 auto;padding:18px 16px 36px}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--leaf);font-weight:800}
+.brand small{display:block;font-size:13px;font-weight:700;color:var(--sub)}
+.brand img{width:40px;height:40px;border-radius:11px}
+h1{white-space:pre-line;font-size:30px;line-height:1.28;margin:16px 0 8px;text-wrap:balance}
+.lead{margin:0 0 18px;color:var(--sub);font-size:16px;line-height:1.55}
+.phone{position:relative;margin:0 auto 6px;width:86%;max-width:340px;aspect-ratio:9/13;border-radius:38px;padding:12px;background:#2d2a26;box-shadow:0 18px 40px rgba(60,45,20,.28)}
+.screen{position:relative;height:100%;border-radius:28px;overflow:hidden;background:linear-gradient(170deg,#9fc7e8 0%,#d9e9d1 55%,#f3e2b8 100%)}
+.clock{position:absolute;top:7%;left:0;right:0;text-align:center;color:#fff;font-size:44px;font-weight:800;text-shadow:0 2px 8px rgba(0,0,0,.18)}
+.wgt{position:absolute;left:8%;width:52%;top:24%;border-radius:22px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.wgt img{display:block;width:100%}
+.apps{position:absolute;left:9%;right:9%;bottom:5%;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.apps i{aspect-ratio:1;border-radius:14px;background:rgba(255,255,255,.55)}
+.apps2{position:absolute;right:8%;top:24%;width:30%;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.apps2 i{aspect-ratio:1;border-radius:14px;background:rgba(255,255,255,.55)}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}.card{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 6px 16px rgba(60,45,20,.12)}.card img{display:block;width:100%;aspect-ratio:1;object-fit:cover}.card b{display:block;font-size:15px;line-height:1.35;margin:10px 12px 4px}.card span{display:block;font-size:13px;line-height:1.5;color:var(--sub);margin:0 12px 12px}
+.cap{text-align:center;font-size:13px;color:var(--sub);margin-bottom:26px}
+h2{font-size:22px;margin:26px 0 6px}
+p.t{margin:0 0 12px;color:var(--sub);font-size:15px;line-height:1.55}
+.shot{display:block;width:100%;border-radius:22px;box-shadow:0 10px 26px rgba(60,45,20,.18)}
+.grow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.grow figure{margin:0;position:relative}
+.grow img{display:block;width:100%;border-radius:14px}
+.grow figcaption{position:absolute;left:50%;bottom:6px;transform:translateX(-50%);background:var(--card);border-radius:10px;padding:1px 8px;font-size:12px;font-weight:800;white-space:nowrap;color:var(--sub)}
+.grow figure:last-child figcaption{color:var(--leaf)}
+.btns{display:grid;gap:10px;margin-top:26px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:800;font-size:17px;padding:15px 12px;border-radius:14px;background:var(--leaf);color:#fff}
+.btn.alt{background:#fff;color:var(--leaf);border:2px solid var(--leaf)}
+.soon{margin-top:26px;background:var(--card);border:2px dashed #cdb98e;border-radius:16px;padding:16px;text-align:center}
+.soon b{display:block;font-size:20px;color:var(--leaf)}.soon span{display:block;margin-top:4px;color:var(--sub);font-size:14px}
+footer{margin-top:22px;text-align:center;font-size:13px}footer a{color:#5b4a2e;margin:0 8px}
+</style></head>
+<body><main>
+<div class="brand"><img src="a/icon.png" alt=""><span><span data-t="title"></span><small data-t="sub2"></small></span></div>
+<h1 data-t="h1"></h1><p class="lead" data-t="lead"></p>
+<div class="phone"><div class="screen"><div class="clock">9:41</div><div class="wgt"><img src="a/widget2.jpg" alt=""></div><div class="apps2"><i></i><i></i><i></i><i></i></div><div class="apps"><i></i><i></i><i></i><i></i></div></div></div>
+<div class="cap" data-t="widget"></div>
+<h2 data-t="h_care"></h2><p class="t" data-t="care"></p><img class="shot" src="a/water.jpg" alt="">
+<h2 data-t="h_grow"></h2><p class="t" data-t="grow"></p>
+<div class="grow"><figure><img src="a/g1.jpg" alt=""><figcaption data-t="d1"></figcaption></figure><figure><img src="a/g4.jpg" alt=""><figcaption data-t="d4"></figcaption></figure><figure><img src="a/g11.jpg" alt=""><figcaption data-t="d11"></figcaption></figure><figure><img src="a/g15.jpg" alt=""><figcaption data-t="d15"></figcaption></figure></div>
+<h2 data-t="h_harvest"></h2><p class="t" data-t="harvest"></p><img class="shot" src="a/harvest.jpg" alt="">
+<div class="cards"><div class="card"><img src="a/guest.jpg" alt=""><b data-t="h_guest"></b><span data-t="guest"></span></div><div class="card"><img src="a/gift.jpg" alt=""><b data-t="h_gift"></b><span data-t="gift"></span></div></div>
+<h2 data-t="h_garden"></h2><p class="t" data-t="garden"></p><img class="shot" src="a/garden.jpg" alt="">
+<div id="go"></div>
+<footer id="ft"></footer>
+</main>
+<script>
+var D={"t":{"ko":{"title":"고플랜츠 GoPlants","h1":"홈 화면에서\n과일·채소를 키워요","lead":"앱을 열지 않아도 위젯 속 내 나무가 먼저 말을 걸어요.","h_care":"매일 직접 돌봐요","care":"물 주기 · 햇빛 · 가지치기 · 벌레 잡기 · 노래 불러 주기 — 과일 친구가 사다리를 타고 직접 해요.","h_grow":"하루하루 자라요","grow":"작은 싹이 15~30일 뒤 주렁주렁 열매를 맺어요.","d1":"1일","d4":"4일","d11":"11일","d15":"수확!","h_garden":"다 키운 나무는 내 정원으로","garden":"거둔 화분이 연못·온실·과수원이 있는 정원에 하나씩 모여요.","widget":"홈 화면 위젯 (2×2)","soon":"곧 출시돼요","soonSub":"구글 플레이·앱스토어에 곧 올라가요. 조금만 기다려 주세요!","gp":"Google Play에서 받기","as":"App Store에서 받기","terms":"이용약관","privacy":"개인정보 처리방침","h_harvest":"다 키우면 한 상자 가득","harvest":"정성껏 키운 열매를 하나하나 따서 선물 상자에 담아요.","h_guest":"소품을 두면 손님이 찾아와요","guest":"모이대엔 참새, 꽃 화분엔 나비, 물그릇엔 개구리 — 누가 올지 몰라요.","h_gift":"납품하면 답례품이 와요","gift":"수확한 상자를 백화점에 납품하면 과일마다 다른 답례품이 도착해요.","sub2":"바쁜 어른을 위한 힐링 위젯"},"en":{"title":"GoPlants","h1":"Grow fruit and veggies on your home screen","lead":"Your tree says hello from the widget — even before you open the app.","h_care":"Care for it every day","care":"Water · sunshine · pruning · bug patrol · a little song — your fruit friend climbs the ladder and does it with you.","h_grow":"Watch it grow day by day","grow":"A tiny sprout becomes a tree full of fruit in 15–30 days.","d1":"Day 1","d4":"Day 4","d11":"Day 11","d15":"Harvest!","h_garden":"Every tree joins your garden","garden":"Harvested pots gather in a garden with a pond, a greenhouse and an orchard.","widget":"Home-screen widget (2×2)","soon":"Coming soon","soonSub":"Coming to Google Play and the App Store very soon!","gp":"Get it on Google Play","as":"Download on the App Store","terms":"Terms","privacy":"Privacy","h_harvest":"A whole box when it’s ready","harvest":"Pick each fruit you grew and pack it into a gift box.","h_guest":"Guests drop by","guest":"Sparrows at the feeder, butterflies at the flowers, frogs at the water — who’s next?","h_gift":"Deliver it, get a gift back","gift":"Deliver your harvest box to the department store and a thank-you gift arrives for each fruit.","sub2":"A calming widget for busy grown-ups"},"ja":{"title":"GoPlants","h1":"ホーム画面で\n果物・野菜を育てよう","lead":"アプリを開かなくても、ウィジェットから木が話しかけてきます。","h_care":"毎日、自分でお世話","care":"水やり・ひなた・剪定・虫とり・歌 — 果物の仲間がはしごに登って一緒にやります。","h_grow":"一日一日、大きくなる","grow":"小さな芽が15〜30日でたわわに実ります。","d1":"1日目","d4":"4日目","d11":"11日目","d15":"収穫！","h_garden":"育てた木はわたしの庭へ","garden":"収穫した鉢が、池・温室・果樹園のある庭に集まります。","widget":"ホーム画面ウィジェット（2×2）","soon":"まもなく公開","soonSub":"Google Play・App Storeにまもなく登場します。","gp":"Google Playで入手","as":"App Storeからダウンロード","terms":"利用規約","privacy":"プライバシーポリシー","h_harvest":"育てきったら箱いっぱい","harvest":"心をこめて育てた実をひとつずつ摘んで、ギフトボックスに詰めます。","h_guest":"お客さんがやって来る","guest":"えさ台にはスズメ、花の鉢にはチョウ、水鉢にはカエル — だれが来るかお楽しみ。","h_gift":"納品するとお礼の品","gift":"収穫した箱を百貨店に納品すると、果物ごとに違うお礼の品が届きます。","sub2":"忙しい大人のための癒やしウィジェット"},"zh-TW":{"title":"GoPlants","h1":"在桌面上\n種水果和蔬菜","lead":"不用打開 App，小工具裡的樹會先跟你打招呼。","h_care":"每天親手照顧","care":"澆水・曬太陽・修剪・抓蟲・唱歌 — 水果朋友會爬上梯子一起做。","h_grow":"一天天長大","grow":"小小的嫩芽，15～30天後結滿果實。","d1":"第1天","d4":"第4天","d11":"第11天","d15":"收成！","h_garden":"種好的樹搬進我的花園","garden":"收成的盆栽會聚到有池塘、溫室和果園的花園。","widget":"桌面小工具（2×2）","soon":"即將推出","soonSub":"很快就會在 Google Play 和 App Store 上架！","gp":"在 Google Play 下載","as":"在 App Store 下載","terms":"使用條款","privacy":"隱私權政策","h_harvest":"種好了就是滿滿一盒","harvest":"把親手種出的果實一顆顆摘下，裝進禮盒。","h_guest":"客人會來拜訪","guest":"餵鳥台有麻雀、花盆有蝴蝶、水盆有青蛙 — 猜猜誰會來？","h_gift":"交貨就有回禮","gift":"把收成的禮盒交貨給百貨公司，每種水果都會收到不同的回禮。","sub2":"給忙碌大人的療癒小工具"},"zh-CN":{"title":"GoPlants","h1":"在桌面上\n种水果和蔬菜","lead":"不用打开 App，小组件里的树会先跟你打招呼。","h_care":"每天亲手照顾","care":"浇水・晒太阳・修剪・抓虫・唱歌 — 水果朋友会爬上梯子一起做。","h_grow":"一天天长大","grow":"小小的嫩芽，15～30天后结满果实。","d1":"第1天","d4":"第4天","d11":"第11天","d15":"收获！","h_garden":"种好的树搬进我的花园","garden":"收获的盆栽会聚到有池塘、温室和果园的花园。","widget":"桌面小组件（2×2）","soon":"即将推出","soonSub":"很快就会在 Google Play 和 App Store 上架！","gp":"在 Google Play 下载","as":"在 App Store 下载","terms":"使用条款","privacy":"隐私政策","h_harvest":"种好了就是满满一盒","harvest":"把亲手种出的果实一颗颗摘下，装进礼盒。","h_guest":"客人会来拜访","guest":"喂鸟台有麻雀、花盆有蝴蝶、水盆有青蛙 — 猜猜谁会来？","h_gift":"交货就有回礼","gift":"把收获的礼盒交货给百货公司，每种水果都会收到不同的回礼。","sub2":"给忙碌大人的治愈小组件"}},"store":{"android":"","ios":""},"legal":{"ko":"","en":"en/","ja":"ja/","zh-TW":"zh-hant/","zh-CN":"zh-hans/"}};
+function lang(){var l=(navigator.language||'ko').toLowerCase();if(l.indexOf('ko')===0)return 'ko';if(l.indexOf('ja')===0)return 'ja';if(l.indexOf('zh')===0)return /tw|hk|mo|hant/.test(l)?'zh-TW':'zh-CN';return 'en'}
+var L=lang(),T=D.t[L];document.documentElement.lang=L;document.title=T.title;
+Array.prototype.forEach.call(document.querySelectorAll('[data-t]'),function(e){e.textContent=T[e.getAttribute('data-t')]});
+var ua=navigator.userAgent||'',ios=/iPhone|iPad|iPod/.test(ua)||(/Macintosh/.test(ua)&&'ontouchend' in document),S=D.store,go=document.getElementById('go');
+function a(href,txt,alt){var e=document.createElement('a');e.className='btn'+(alt?' alt':'');e.href=href;e.textContent=txt;e.rel='noopener';return e}
+if(!S.android&&!S.ios){go.innerHTML='<div class="soon"><b></b><span></span></div>';go.querySelector('b').textContent=T.soon;go.querySelector('span').textContent=T.soonSub}
+else{var box=document.createElement('div');box.className='btns';var list=[];if(S.android)list.push([S.android,T.gp]);if(S.ios)list.push([S.ios,T.as]);if(ios)list.reverse();list.forEach(function(x,i){box.appendChild(a(x[0],x[1],i>0))});go.appendChild(box)}
+document.getElementById('ft').innerHTML='<a href="../terms/'+D.legal[L]+'"></a><a href="../privacy/'+D.legal[L]+'"></a>';var fa=document.querySelectorAll('#ft a');fa[0].textContent=T.terms;fa[1].textContent=T.privacy;
+</script></body></html>
